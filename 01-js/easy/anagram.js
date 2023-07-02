@@ -8,7 +8,14 @@
 */
 
 function isAnagram(str1, str2) {
-
+  const a = str1.split("").sort().join("");
+  const b = str2.split("").sort().join("");
+  if(a == b){
+    console.log('True');
+  }
+  else{
+    console.log('False');
+  }
 }
-
+// isAnagram('rsap','pasr')
 module.exports = isAnagram;

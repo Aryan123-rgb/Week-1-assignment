@@ -17,6 +17,76 @@
   - `npm run test-calculator`
 */
 
-class Calculator {}
+class Calculator {
+  constructor() {
+    this.result = 0;
+    this.allowed = [
+      "1",
+      "2",
+      "3",
+      "4",
+      "5",
+      "6",
+      "7",
+      "8",
+      "9",
+      "0",
+      "/",
+      "*",
+      "-",
+      "+",
+    ];
+  }
+
+  add(a, b) {
+    let sum = a + b;
+    this.result += sum;
+  }
+
+  subtract(a, b) {
+    let sum = a - b;
+    this.result += sum;
+  }
+
+  multiply(a, b) {
+    let sum = a * b;
+    this.result += sum;
+  }
+
+  divide(a, b) {
+    if (b === 0) throw new Error("can't divide by zero");
+    let sum = a / b;
+    this.result += sum;
+  }
+  clear() {
+    this.result = 0;
+  }
+
+  getResult() {
+    console.log(this.result);
+  }
+
+  calculate(str) {
+    try {
+      this.result = eval(str);
+      console.log(this.result);
+    } catch (error) {
+      console.error("Invalid expression:", error);
+    }
+  }
+}
+
+const test = new Calculator();
+// test.calculate("10 +   2 *    (   6 - (4 + 1) / 2) + 7");
+// test.calculate('5 + abc')
+test.add(2, 3);
+test.subtract(2,3);
+test.getResult();
+test.multiply(2,3)
+test.multiply(100,100);
+test.getResult();
+test.clear();
+test.divide(10,5);
+test.getResult();
 
 module.exports = Calculator;

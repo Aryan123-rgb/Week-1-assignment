@@ -7,7 +7,15 @@
 */
 
 function isPalindrome(str) {
-  return true;
+  let reversedString = str.split("").reverse().join("");
+  if(str == reversedString){
+    console.log('True');
+  }
+  else{
+    console.log('False');
+  }
 }
+
+isPalindrome('aasaa')
 
 module.exports = isPalindrome;
